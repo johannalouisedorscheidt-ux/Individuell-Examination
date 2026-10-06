@@ -15,7 +15,13 @@ public class Account {
         return balance;
     }
     public void deposit(int amount){
-        balance += amount;
+          if (amount <= 0) {
+              System.out.println("Otillräckligt med saldo");
+        } else {
+              balance += amount;
+              System.out.println("Transaktionen lyckades! " + "Saldot: " + balance);
+          }
+
     }
 
     public void withdraw(int amount){

@@ -7,7 +7,7 @@ public class AccountRegister {
       public void printAll(){
           for(int i = 0; i < accounts.size(); i++) {
               Account a = accounts.get(i);
-              System.out.println("Konto: " + a.getName() + "| Saldo: " + a.getBalance());
+              System.out.println("Konto: " + a.getName() + " | Saldo: " + a.getBalance());
           }
       }
 
@@ -25,9 +25,5 @@ public class AccountRegister {
           }
           return null;
       }
-
-
-
-
 
 }

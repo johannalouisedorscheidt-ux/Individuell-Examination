@@ -20,6 +20,7 @@ public class Main {
             choice = scanner.nextInt();
             scanner.nextLine();
 
+
             if (choice == 1) {
 
                 System.out.println("Namn på ägaren: ");
@@ -36,6 +37,7 @@ public class Main {
 
             } else if (choice == 3) {
                 System.out.println("Name: ");
+
                 String name = scanner.nextLine();
 
                 Account found = register.findAccount(name);
@@ -52,6 +54,7 @@ public class Main {
             } else if (choice == 4) {
 
                 System.out.println("Name: ");
+
                 String name = scanner.nextLine();
 
                 Account found = register.findAccount(name);
@@ -65,14 +68,13 @@ public class Main {
                     System.out.println("Det nya saldot: " + found.getBalance());
                 } else {
                     System.out.println("Kontot saknas: " + name);
-
                 }
 
                 } else if (choice == 5) {
                     System.out.println("Konto appen stängs ner! ");
 
                 } else {
-                    System.out.println("Ett ogiltigt val har gjorts, försök igen! ");
+                    System.out.println("Ett ogiltigt val av nummer har gjorts! ");
 
                 }
             }
