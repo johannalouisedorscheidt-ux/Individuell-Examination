@@ -45,7 +45,9 @@ public class Main {
                 if (found != null) {
                     System.out.println("Sätt in pengar: ");
                     int amount = scanner.nextInt();
+
                     found.deposit(amount);
+
                     System.out.println("Det nya saldot: " + found.getBalance());
                 } else {
                     System.out.println("Kontot saknas: " + name);
