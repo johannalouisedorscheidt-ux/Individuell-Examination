@@ -25,7 +25,7 @@ public class Account {
 
     public void withdraw(int amount){
         if (amount <= 0) {
-            System.out.println("Uttaget måste vara positivt");
+            System.out.println("Uttaget måste vara större än 0");
 
         } else if (amount > balance) {
             System.out.println("Transaktion nekades! finns inte tillräckligt med saldo!");
