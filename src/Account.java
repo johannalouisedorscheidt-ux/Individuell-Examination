@@ -36,5 +36,17 @@ public class Account {
             System.out.println("Transaktion lyckades! "  + "Saldot " + balance);
        }
     }
+    public void applyInterest() {
+        int interest = balance * 5 / 100;
+        balance += interest;
+
+        System.out.println("Ränta: " + interest + " kr");
+        System.out.println("Nytt saldo: " + balance + " kr");
+
+    }
+
+
+
+
 
 }
