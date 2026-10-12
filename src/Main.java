@@ -36,15 +36,31 @@ public class Main {
             if (choice == 1) {
 
                 System.out.println("Namn på ägaren: ");
+
                 String name = scanner.nextLine();
-                System.out.println("Ange start saldot: ");
-                int balance = scanner.nextInt();
-                scanner.nextLine();
 
-                register.createAccount(name, balance);
-                System.out.println("Kontot har nu skapats!");
+                int balance = 0;
+                boolean correctInput = false;
 
+                while (!correctInput) {
+                    try {
+                        System.out.println("Ange start saldot: ");
+                        balance = scanner.nextInt();
+                        scanner.nextLine();
 
+                        if (balance < 0) {
+                            System.out.println("Start saldot får inte vara negativt!");
+                        } else {
+                            correctInput = true;
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("En felaktig inmatning har gjorts, det måste vara ett heltal");
+                        scanner.nextLine();
+                    }
+                }
+
+                    register.createAccount(name, balance);
+                    System.out.println("Kontot har nu skapats!");
 
             } else if (choice == 2) {
                 register.printAll();
@@ -78,7 +94,6 @@ public class Main {
                     }
 
                     found.deposit(amount);
-
                     System.out.println("Det nya saldot: " + found.getBalance());
 
                 } else {
@@ -114,8 +129,8 @@ public class Main {
                     }
 
                     found.withdraw(amount);
-
                     System.out.println("Det nya saldot: " + found.getBalance());
+
                 } else {
                     System.out.println("Kontot saknas: " + name);
                 }
