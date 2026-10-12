@@ -15,6 +15,7 @@ public class Account {
         return balance;
     }
 
+
     public void deposit(int amount){
           if (amount <= 0) {
               System.out.println("Insättningen måste vara ett positivt belopp");
@@ -23,6 +24,8 @@ public class Account {
               System.out.println("Transaktionen lyckades! " + "Saldot: " + balance);
           }
     }
+
+
 
     public void withdraw(int amount){
         if (amount <= 0) {
@@ -36,6 +39,8 @@ public class Account {
             System.out.println("Transaktion lyckades! "  + "Saldot " + balance);
        }
     }
+
+
     public void applyInterest() {
         int interest = balance * 5 / 100;
         balance += interest;
@@ -44,9 +49,4 @@ public class Account {
         System.out.println("Nytt saldo: " + balance + " kr");
 
     }
-
-
-
-
-
 }

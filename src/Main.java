@@ -44,8 +44,12 @@ public class Main {
                 register.createAccount(name, balance);
                 System.out.println("Kontot har nu skapats!");
 
+
+
             } else if (choice == 2) {
                 register.printAll();
+
+
 
             } else if (choice == 3) {
 
@@ -81,6 +85,8 @@ public class Main {
                     System.out.println("Kontot saknas: " + name);
                 }
 
+
+
             } else if (choice == 4) {
 
                 System.out.println("Name: ");
@@ -114,6 +120,8 @@ public class Main {
                     System.out.println("Kontot saknas: " + name);
                 }
 
+
+
             } else if (choice == 5) {
 
                 System.out.println("Namn: ");
@@ -127,6 +135,7 @@ public class Main {
                 } else {
                     System.out.println("Kontot saknas: " + name);
                 }
+
 
 
                 } else if (choice == 6) {
