@@ -54,12 +54,27 @@ public class Main {
                 Account found = register.findAccount(name);
 
                 if (found != null) {
-                    System.out.println("Sätt in pengar: ");
-                    int amount = scanner.nextInt();
+                    int amount = 0;
+                    boolean correctInput= false;
+
+                    while (!correctInput) {
+                        try {
+                            System.out.println("Sätt in pengar: ");
+                            amount = scanner.nextInt();
+                            scanner.nextLine();
+
+                            correctInput = true;
+
+                        } catch (InputMismatchException e) {
+                            System.out.println("Felaktig inmatning! Det måste vara siffror");
+                            scanner.nextLine();
+                        }
+                    }
 
                     found.deposit(amount);
 
                     System.out.println("Det nya saldot: " + found.getBalance());
+
                 } else {
                     System.out.println("Kontot saknas: " + name);
                 }
