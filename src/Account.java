@@ -14,6 +14,7 @@ public class Account {
     public int getBalance() {
         return balance;
     }
+
     public void deposit(int amount){
           if (amount <= 0) {
               System.out.println("Insättningen måste vara ett positivt belopp");

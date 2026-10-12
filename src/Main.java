@@ -1,3 +1,5 @@
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +8,7 @@ public class Main {
         AccountRegister register = new AccountRegister();
 
         Scanner scanner = new Scanner(System.in);
+
         int choice = 0;
 
         while (choice != 5) {
@@ -17,8 +20,16 @@ public class Main {
             System.out.println("5. Avslut");
             System.out.println("Val: ");
 
+            try {
             choice = scanner.nextInt();
             scanner.nextLine();
+
+            } catch (InputMismatchException e) {
+                System.out.println("Fel! Du måste skriva en siffra.");
+
+                scanner.nextLine();
+                continue;
+            }
 
 
             if (choice == 1) {
