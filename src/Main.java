@@ -88,8 +88,22 @@ public class Main {
                 Account found = register.findAccount(name);
 
                 if (found != null) {
-                    System.out.println("Ta ut pengar: ");
-                    int amount = scanner.nextInt();
+                    int amount = 0;
+                    boolean correctInput = false;
+
+                    while (!correctInput) {
+                        try {
+                            System.out.println("Ta ut pengar: ");
+                            amount = scanner.nextInt();
+                            scanner.nextLine();
+
+                            correctInput = true;
+
+                        } catch (InputMismatchException e) {
+                                System.out.println("Felaktig inmatning! Det måste vara siffror");
+                                scanner.nextLine();
+                        }
+                    }
 
                     found.withdraw(amount);
 
